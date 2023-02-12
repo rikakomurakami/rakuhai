@@ -1,0 +1,727 @@
+@charset "UTF-8";
+/* =================================================
+                        PC
+  ================================================ */
+/* ============== ヘッダー ============= */
+/* 
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+.brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.site-header {
+  position: relative;
+  background-color: #def7ff;
+}
+
+.site-header__wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .site-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+.nav__wrapper {
+  display: flex;
+}
+
+@media screen and (max-width: 599px) {
+  .nav__wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #d9f0f7;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+  .nav__wrapper.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.nav__item a {
+  display: block;
+  padding: 1.5rem 1rem;
+}
+
+.nav__toggle {
+  display: none;
+}
+
+@media screen and (max-width: 599px) {
+  .nav__toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+/* ============== ヘッダー終了 ============= */
+table {
+  position: relative;
+  width: 90%;
+  left: 4.5%;
+  margin-bottom: 50px;
+  border-collapse: collapse;
+}
+table tr th,
+table tr td {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  font-size: 5px;
+}
+table tr th {
+  background: #666;
+  color: #fff;
+}
+
+.link {
+  cursor: pointer;
+}
+
+a {
+  font-size: 14px;
+}
+
+.fixedWidget {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  top: 0px;
+  transition: 0.7s;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+#overlay.overlay-on {
+  visibility: visible;
+  top: 10vh;
+}
+
+.overlay-inner {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 1s ease-out;
+}
+
+.is-active-black {
+  display: block;
+  opacity: 1;
+}
+
+#wrapper {
+  font-size: 14px;
+  position: relative;
+}
+#wrapper #sp-nav {
+  display: none;
+}
+#wrapper .btnHamburger {
+  display: none;
+}
+#wrapper #access {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  padding: 0 5%;
+}
+#wrapper #access .access-flex {
+  width: 25%;
+  /* 横幅を3等分 */
+  height: auto;
+  display: flex;
+  /* 高さを揃えるための指定 */
+  padding: 10px 0;
+}
+#wrapper #access .access-flex img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+}
+#wrapper #access .access-flex p {
+  font-weight: bold;
+  padding: 5px 10px 10px 18px;
+}
+#wrapper #access::before {
+  content: "";
+  display: block;
+  width: 23%;
+  order: 1;
+}
+#wrapper #access::after {
+  content: "";
+  display: block;
+  width: 23%;
+}
+#wrapper main {
+  margin: 80px 0 60px;
+}
+#wrapper main h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+#wrapper main #location {
+  padding: 0 5%;
+}
+#wrapper main #location .location_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  padding-top: 10px;
+}
+#wrapper main #location .location_grid img {
+  width: 100%;
+  height: 83%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+#wrapper main #location .location_grid p {
+  font-size: 18px;
+  font-weight: bold;
+}
+#wrapper main #goto {
+  margin-top: 40px;
+  opacity: 0.9;
+  position: relative;
+  margin-top: 67px;
+  padding: 0 5%;
+  z-index: -10;
+}
+#wrapper main #goto img {
+  width: 100%;
+  border-radius: 16px;
+}
+#wrapper main #goto .goto_text_position {
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+}
+#wrapper main #goto .goto_text_position h2 {
+  font-size: 42px;
+  font-weight: bold;
+}
+#wrapper main #goto .goto_text_position p {
+  font-size: 18px;
+  font-weight: 100;
+}
+#wrapper main #experience {
+  margin: 43px 0;
+  padding: 0 5%;
+  background: black;
+  color: white;
+  padding: 40px 5%;
+}
+#wrapper main #experience p {
+  font-weight: bold;
+}
+#wrapper main #experience .experience_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+#wrapper main #experience .experience_flex .experience_flex_child {
+  width: 32%;
+}
+#wrapper main #experience .experience_flex .experience_flex_child img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+#wrapper main #experience .experience_flex .experience_flex_child h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+#wrapper main #experience .experience_flex .experience_flex_child p {
+  font-weight: normal;
+}
+#wrapper main #hosts {
+  padding: 0 5%;
+}
+#wrapper main #hosts .hosts_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+#wrapper main #hosts .hosts_flex .hosts_flex_child {
+  width: 32%;
+}
+#wrapper main #hosts .hosts_flex .hosts_flex_child img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+#wrapper main #hosts .hosts_flex .hosts_flex_child h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+#wrapper footer {
+  border-top: 1px solid #ddd;
+  background-color: #f7f7f7;
+  padding: 35px 5%;
+}
+#wrapper footer #footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#wrapper footer #footer-flex .footer-flex-contents {
+  width: 25%;
+}
+#wrapper footer #footer-flex .footer-flex-contents h2 {
+  font-weight: bold;
+}
+#wrapper footer #footer-flex .footer-flex-contents a {
+  display: block;
+  margin: 16px 0;
+  color: black;
+  color: #333;
+}
+#wrapper footer #policy {
+  border-top: 1px solid #ccc;
+  padding-top: 16px;
+}
+#wrapper footer #policy a {
+  color: black;
+}
+#wrapper footer .footer_bottom_info {
+  display: flex;
+}
+#wrapper footer .footer_bottom_info a {
+  padding-right: 10px;
+}
+#wrapper footer small {
+  font-size: 14px;
+}
+
+/* ===========================================
+                お問い合わせフオーム
+ ========================================== */
+#contact header {
+  background: rgba(0, 0, 0, 0.8);
+}
+#contact #contact-box {
+  padding: 0 5%;
+}
+#contact #contact-box main {
+  width: 70%;
+  margin: 5% auto;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+}
+#contact #contact-box main h2 {
+  text-align: center;
+  font-size: 19px;
+  padding: 19px 0;
+  border-bottom: 1px solid #ccc;
+}
+#contact #contact-box main form {
+  margin: 3%;
+}
+#contact #contact-box main form h3 {
+  display: flex;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eaeaea));
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: 1%;
+  margin: 1% 0;
+}
+#contact #contact-box main form span {
+  display: flex;
+  font-size: 14px;
+}
+#contact #contact-box main form .required_mark {
+  color: #f00;
+}
+#contact #contact-box main form #contact_dl {
+  margin: 2% 0;
+}
+#contact #contact-box main form #contact_dl dt label {
+  display: flex;
+  font-size: 16px;
+}
+#contact #contact-box main form #contact_dl dd {
+  padding: 0.5% 0 1%;
+  font-size: 1.2rem;
+}
+#contact #contact-box main form #contact_dl dd input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px 2.5px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+#contact #contact-box main form #content_info textarea {
+  width: 100%;
+  resize: none;
+  height: 33vh;
+  font-size: 1.2rem;
+  padding: 10px 2.5px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  word-break: break-all;
+}
+#contact #contact-box main .btn_up {
+  color: white;
+  background-color: rgb(215, 4, 102);
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px 2.5px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#comfirm_dl dt {
+  margin-top: 1rem;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+#comfirm_dl dd {
+  padding: 6px;
+  font-size: 1.2rem;
+}
+#comfirm_dl #wrap {
+  word-break: break-all;
+}
+
+#button_flex {
+  padding: 1% 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn_back {
+  width: 100%;
+  font-size: 19px;
+  text-align: center;
+  line-height: 45px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: 2px solid #066;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #066;
+}
+
+.complete main #complete_info {
+  padding: 2%;
+}
+.complete main #complete_info a {
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+/* ========================================
+                 DBテーブル
+ ======================================= */
+table {
+  position: relative;
+  width: 88%;
+  left: 4.5%;
+  margin-bottom: 50px;
+  border-collapse: collapse;
+  z-index: 0;
+}
+table tr th,
+table tr td {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  font-size: 8px;
+}
+
+/* 削除ボタン */
+.deleteBtn {
+  display: inline-block;
+  border-radius: 6%;
+  font-size: 8pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 5px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #ffffff;
+  line-height: 1em;
+  opacity: 1;
+  transition: 0.3s;
+}
+.deleteBtn:hover {
+  opacity: 0.8;
+}
+
+.deleteBtn_ok {
+  display: none;
+}
+
+.is-active-Btn {
+  display: block;
+}
+
+.edit {
+  width: 38px;
+}
+
+/* ========================================
+            DBテーブル削除ポップアップ
+ ======================================= */
+.deletes {
+  cursor: pointer;
+}
+
+.delete_js {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.798);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+.delete_js .delete_popup {
+  position: absolute;
+  top: 823px;
+  width: 40%;
+  height: 242px;
+  background: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  border-radius: 10px;
+  z-index: 10;
+}
+.delete_js .delete_popup .window {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 20px;
+}
+.delete_js .delete_popup .window .table_button {
+  border: 1px solid #666;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.delete_js .delete_popup .window #cancel {
+  cursor: pointer;
+}
+
+.is-active-delete {
+  display: block;
+  opacity: 1;
+}
+
+.record_delete {
+  display: none;
+}
+
+.is-active-record-delete {
+  display: block;
+}
+
+/* ============================ TB ============================ */
+@media screen and (max-width: 896px) {
+  /* ========================================
+                  DBテーブル
+  ======================================= */
+  table {
+    position: relative;
+    width: 90%;
+    left: 4.5%;
+    margin-bottom: 50px;
+    border-collapse: collapse;
+  }
+  table tr th,
+  table tr td {
+    border: 1px solid #000;
+    padding: 5px 10px;
+    font-size: 5px;
+  }
+  table tr th {
+    background: #666;
+    color: #fff;
+  }
+  header #overlay {
+    width: 60%;
+    left: 20%;
+  }
+  #pc_nav {
+    display: none;
+  }
+  #signIn {
+    display: none;
+  }
+  .signIn_click_border {
+    border-bottom: 1px solid #ccc;
+  }
+  header {
+    position: relative;
+    height: 84px;
+    padding-right: 43px;
+  }
+  #wrapper {
+    position: relative;
+    /*navクリック前*/
+    /*navクリック後*/
+  }
+  #wrapper #sp-nav {
+    position: absolute;
+    display: none;
+    top: 75px;
+    width: 200px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 200;
+  }
+  #wrapper #sp-nav.is-active {
+    display: block;
+    width: 200px;
+    right: 5.5%;
+    opacity: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 0 16px;
+    box-shadow: 0 10px 25px 0 rgba(100, 100, 100, 0.5);
+  }
+  #wrapper #sp-nav.is-active a {
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+  }
+  #wrapper .btnHamburger {
+    display: block;
+    width: 50px;
+    padding-top: 10px;
+  }
+  #wrapper .btnHamburger:hover {
+    opacity: 0.9;
+  }
+  #wrapper #fv h1 {
+    font-size: 48px;
+    line-height: 1.5;
+  }
+  #wrapper #access .access-flex {
+    width: 50%;
+  }
+  #wrapper main #location .location_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #wrapper main #location .location_grid .location-flex {
+    margin-bottom: 10px;
+  }
+  #wrapper main #location .location_grid .location-flex p {
+    padding-top: 8px;
+  }
+  #wrapper main #goto {
+    margin-top: 38px;
+  }
+  #wrapper main #goto .goto_text_position h2 {
+    font-size: 32px;
+  }
+  #wrapper main #goto .goto_text_position p {
+    font-size: 19px;
+  }
+  #wrapper footer #footer-flex {
+    display: block;
+  }
+  #wrapper footer #footer-flex .footer-flex-contents {
+    width: 100%;
+  }
+  #wrapper footer #footer-flex .footer-flex-contents h2 {
+    border-bottom: 1px solid #ccc;
+  }
+  #contact #contact-box main {
+    width: 90%;
+  }
+}
+/* ============================ SP ============================ */
+@media screen and (max-width: 480px) {
+  header #overlay {
+    width: 80%;
+    left: 10%;
+  }
+  #wrapper #top_info {
+    padding: 18px;
+  }
+  #wrapper #top_info a {
+    line-height: 1.6;
+    display: block;
+  }
+  #wrapper #fv header #logo {
+    padding-left: 13px;
+  }
+  #wrapper #fv h1 {
+    font-size: 32px;
+    line-height: 2;
+  }
+  #wrapper #access {
+    display: block;
+  }
+  #wrapper main #goto .goto_text_position {
+    position: static;
+  }
+  #wrapper main #experience {
+    padding-bottom: 20px;
+  }
+  #wrapper main #experience .experience_flex .experience_flex_child {
+    width: 50%;
+    width: 48%;
+    padding-bottom: 30px;
+  }
+  #wrapper main #hosts .hosts_flex .hosts_flex_child {
+    width: 50%;
+    width: 48%;
+    padding-bottom: 20px;
+  }
+  #wrapper main #hosts .hosts_flex .hosts_flex_child h3 {
+    padding-top: 3px;
+  }
+  #wrapper footer {
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
+  #contact #contact-box main {
+    width: 90%;
+  }
+}/*# sourceMappingURL=style.css.map */
